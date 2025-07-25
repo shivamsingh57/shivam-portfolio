@@ -148,3 +148,10 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 
 
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent default form submission
+  window.open(
+    "https://docs.google.com/forms/d/e/1FAIpQLSdA8svxXBYAwD0gZlH99TFeiNvl6o_VB5YRNGwuT8-UTlnJ8w/viewform",
+    "_blank"
+  );
+});
