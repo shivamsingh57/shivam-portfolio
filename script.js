@@ -1,6 +1,4 @@
-// script.js
-
-
+// This is the script file
 
 AOS.init();
 
@@ -12,58 +10,9 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-// // Typing Animation for Hero Roles
-// const roles = ["Java Backend Developer", "Software Engineer", "Software Developer"];
-// let currentRole = 0;
-// let charIndex= 0;
-// let typingDiv = document.createElement("div");
-// typingDiv.className = "animated-roles";
-// document.querySelector(".hero-text").insertBefore(typingDiv, document.querySelector(".hero-text p").nextSibling);
-
-// function typeRole() {
-//   if (charIndex < roles[currentRole].length) {
-//     typingDiv.textContent += roles[currentRole].charAt(charIndex);
-//     charIndex++;
-//     setTimeout(typeRole, 100);
-//   } else {
-//     setTimeout(eraseRole, 2000);
-//   }
-// }
-
-// function eraseRole() {
-//   if (charIndex > 0) {
-//     typingDiv.textContent = roles[currentRole].substring(0, charIndex - 1);
-//     charIndex--;
-//     setTimeout(eraseRole, 50);
-//   } else {
-//     currentRole = (currentRole + 1) % roles.length;
-//     setTimeout(typeRole, 500);
-//   }
-// }
-
-// typeRole();
 
 
-
-// const roles = ["Java Developer", "Software Engineer", "Software Developer"];
-// let index = 0;
-// const roleEl = document.querySelector(".role-text");
-
-// function animateRoles() {
-//   roleEl.textContent = roles[index];
-//   index = (index + 1) % roles.length;
-//   setTimeout(animateRoles, 2500);
-// }
-
-// document.addEventListener("DOMContentLoaded", animateRoles);
-
-
-
-
-
-
-
-const roles = ["Java Developer.", "Software Engineer.", "Software Developer."];
+const roles = ["Software Engineer.", "Java Developer.", "Software Developer."];
 let index = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -98,55 +47,43 @@ document.addEventListener("DOMContentLoaded", () => {
   typeRole();
 });
 
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-document.getElementById("contactForm").addEventListener("submit", async function (e) {
-  e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const statusMsg = document.getElementById("formStatus");
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const statusMsg = document.getElementById("formStatus");
-
-  if (!name || !email || !message) {
-    statusMsg.textContent = "Please fill all fields.";
-    statusMsg.style.color = "red";
-    return;
-  }
-
-  try {
-    const response = await fetch("http://localhost:8080/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message })
-    });
-
-    if (response.ok) {
-      statusMsg.textContent = "Message sent successfully!";
-      statusMsg.style.color = "green";
-      document.getElementById("contactForm").reset();
-    } else {
-      statusMsg.textContent = "Failed to send message.";
+    if (!name || !email || !message) {
+      statusMsg.textContent = "Please fill all fields.";
       statusMsg.style.color = "red";
+      return;
     }
-  } catch (error) {
-    statusMsg.textContent = "An error occurred.";
-    statusMsg.style.color = "red";
-    console.error("Error:", error);
-  }
-});
 
+    try {
+      const response = await fetch("http://localhost:8080/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-
-
-
-
-
-
-
-
-
-
-
+      if (response.ok) {
+        statusMsg.textContent = "Message sent successfully!";
+        statusMsg.style.color = "green";
+        document.getElementById("contactForm").reset();
+      } else {
+        statusMsg.textContent = "Failed to send message.";
+        statusMsg.style.color = "red";
+      }
+    } catch (error) {
+      statusMsg.textContent = "An error occurred.";
+      statusMsg.style.color = "red";
+      console.error("Error:", error);
+    }
+  });
 
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault(); // Prevent default form submission
