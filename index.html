@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shivam Singh | Software Developer</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="static/developer.png" type="image/png" />
+  <link rel="icon" href="static/softwaredev.png" type="image/png" />
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -20,10 +20,12 @@
 <body>
   <header>
     <nav class="container">
+      <!-- <div class="logo"><span>Port</span>folio</div> -->
       <div class="logo"><span>Shivam's</span> Portfolio</div>
       <ul class="nav-links">
   
         <li><a href="#about">About</a></li>
+        <!-- <li><a href="#experience">Experience</a></li> -->
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#resume">Resume</a></li>
@@ -92,8 +94,9 @@
   <section class="about section" id="about">
     <div class="container" data-aos="fade-up">
       <h2>About Me</h2>
-      <p>
-
+    
+<div class="about-content">
+  <p>
       I’m Shivam Singh Solanki, a passionate Java Backend Developer with a strong focus on building scalable and maintainable backend systems.
    I specialize in Spring Boot, Microservices, and RESTful API development.
 
@@ -109,9 +112,35 @@ Security, validation, and error handling are always integrated into my applicati
 I constantly explore new backend technologies and best practices.
 Coding for me is about solving real-world problems through reliable software.
       </p>
+</div>
     </div>
   </section>
 
+
+
+  <section id="experience" class="section">
+    <h2> Professional Experience</h2>
+    <div class="experience-container">
+      <div class="experience-list">
+        <div class="experience-card">
+          <h3>Java Developer</h3>
+          <p class="company">Tata Consultancy Services (TCS), Pune</p>
+          <p class="date">July 2023 – Present</p>
+          <ul>
+           <li> Contributed to a high-performance logistics application for a US-based client, improving operational efficiency and user experience.</li>
+          <li>   Developed RESTful APIs for real-time tracking and seamless front-end and back-end integration. </li>
+        <li>   Built scalable backend services using Java, Spring Boot, and Hibernate, with caching for optimized performance. </li>
+            <li>Worked on microservices architecture, modularizing components like routing and scheduling for better scalability.</li>
+            <li>Monitored and validated REST endpoints in production to ensure service reliability and quick issue resolution.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
  
 
 
@@ -129,6 +158,7 @@ Coding for me is about solving real-world problems through reliable software.
           <p>A backend system to manage patients, appointments, and billing using Spring Boot, PostgreSQL, and secure RESTful APIs.</p>
           <a href= "https://github.com/shivamsingh57/PatientManagementSystemproject" target="_blank">View Project</a>
         </div>
+        
       </div>
     </div>
   </section>

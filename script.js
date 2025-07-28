@@ -92,3 +92,12 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     "_blank"
   );
 });
+
+
+
+
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+
